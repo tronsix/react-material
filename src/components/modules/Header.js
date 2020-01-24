@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 700,
     textDecoration: 'none',
     '&:hover': {
-      color: 'grey',
+      color: '#00000025',
       textDecoration: 'none',
     },
   },
@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
       boxShadow: '0 3px 0 0 red'
     },
     '&:hover': {
-      color: 'grey',
+      color: '#00000025',
       textDecoration: 'none',
       boxShadow: '0 3px 0 0 red'
     },
