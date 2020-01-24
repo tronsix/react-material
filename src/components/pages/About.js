@@ -3,13 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid, Button } from '@material-ui/core';
 import { AlertDialog } from '../modules';
 
-const useStyles = makeStyles( theme => ({
+const useStyles = makeStyles(theme => ({
     root: {
         marginTop: "72px"
     },
     bioPic: {
         width: "100%",
-        paddingBottom: 20, 
+        paddingBottom: 20,
     },
     divider: {
         backgroundColor: "#EFEFEF",
@@ -35,7 +35,21 @@ const useStyles = makeStyles( theme => ({
     linkedIn: {
         fill: theme.palette.background.default
     },
+    button: {
+        margin: "48px 0 48px",
+        borderRadius: '0',
+        border: '2px solid',
+        '&:hover': {
+            border: '2px solid',
+        }
+    },
 }));
+
+const scrollTop = () => {
+    // temporary fix for scroll top not supported on 
+    // edge, explorer, and mobile safari
+    window.scrollTo(0, 0);
+}
 
 export const About = (props) => {
     const publicURL = process.env.PUBLIC_URL,
@@ -58,16 +72,16 @@ export const About = (props) => {
                     </Grid>
                     <Grid item xs={12}>
                         <Typography color="secondary" variant="h6">
-                        Education
+                            Education
                         </Typography>
                         <Typography color="secondary" variant="body2" >
-                        <strong>BFA – Film Production</strong>
-                        <br />
-                        University of Colorado – Denver
+                            <strong>BFA – Film Production</strong>
+                            <br />
+                            University of Colorado – Denver
                         <br /><br />
-                        <strong>Front-end Web Development</strong>
-                        <br />
-                        General Assembly
+                            <strong>Front-end Web Development</strong>
+                            <br />
+                            General Assembly
                         </Typography>
                     </Grid>
                 </Grid>
@@ -77,27 +91,27 @@ export const About = (props) => {
                     About Me
                 </Typography>
                 <Typography color="secondary" variant="body2" >
-                    I’m a UX Designer with expertise in web/graphic design, front-end web development, and video/animation production. 
-                    I currently work at Rocket Dollar, a fintech company based in Austin, Texas. 
+                    I’m a UX Designer with expertise in web/graphic design, front-end web development, and video/animation production.
+                    I currently work at Rocket Dollar, a fintech company based in Austin, Texas.
                     <br /><br />
-                    Rocket Dollar builds streamlined processes for opening and administrating self-directed retirement accounts, 
-                    along with investment management tools to help investors track the performance of their assets. 
+                    Rocket Dollar builds streamlined processes for opening and administrating self-directed retirement accounts,
+                    along with investment management tools to help investors track the performance of their assets.
                     <br /><br />
-                    At Rocket Dollar, I’ve been responsible for developing our brand along with the design system that accompanies it. 
-                    Along with branding, I designed and developed our website, and have worked with our talented development team to 
-                    design and develop our application. Lastly, I’ve worked with our executive and sales and marketing teams to craft 
-                    some of our presentations, marketing materials, and videos. 
+                    At Rocket Dollar, I’ve been responsible for developing our brand along with the design system that accompanies it.
+                    Along with branding, I designed and developed our website, and have worked with our talented development team to
+                    design and develop our application. Lastly, I’ve worked with our executive and sales and marketing teams to craft
+                    some of our presentations, marketing materials, and videos.
                     <br /><br />
                     {/* My tenor at Rocket Dollar has been a humbling experience, I’m surrounded by some of the most talented people 
                     I’ve had the pleasure to work with. I can say I’m most proud of being able to watch our brand grow and influence 
                     the rest of the industry. The single best moment I’ve had has been watching our team win second place 
                     at the Money 2020 Startup Pitch in 2018, and knowing I contributed to the presentation that got us there. 
                     <br /><br /> */}
-                    Before Rocket Dollar, I was the Director of Account Management at BlueCheck, 
-                    a digital age and identity verification company, the Community Development Manager at Candid.ly now Candidly.com, 
+                    Before Rocket Dollar, I was the Director of Account Management at BlueCheck,
+                    a digital age and identity verification company, the Community Development Manager at Candid.ly now Candidly.com,
                     and a Techstars Associate at Techstars Austin.
                     <br /><br />
-                    Outside of work you can find me cooking gourmet meals in my kitchen, practicing yoga, 
+                    Outside of work you can find me cooking gourmet meals in my kitchen, practicing yoga,
                     paddle boarding on Lake Austin, or spoiling my dog Bean.
                 </Typography>
                 <Grid item xs={6}>
@@ -108,7 +122,7 @@ export const About = (props) => {
                     <Typography color="secondary" variant="h6">
                         Social
                     </Typography>
-                    <Grid item xs={12} style={{textAlign: 'left'}}>
+                    <Grid item xs={12} style={{ textAlign: 'left' }}>
                         <a href="https://www.linkedin.com/in/rodneyamartinez/" target="_blank" rel="noopener noreferrer">
                             <Button
                                 variant="contained"
@@ -128,6 +142,16 @@ export const About = (props) => {
                             </Button>
                         </a>
                     </Grid>
+                </Grid>
+                <Grid container style={{justifyContent: 'center'}}>
+                    <Button
+                        className={classes.button}
+                        onClick={scrollTop}
+                        color="primary"
+                        variant="outlined"
+                    >
+                        Back to Top
+                    </Button>
                 </Grid>
             </Grid>
         </Grid>

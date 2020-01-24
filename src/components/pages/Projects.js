@@ -24,7 +24,7 @@ const usestyles = makeStyles(theme => ({
         height: "100%",
     },
     button: {
-        margin: "48px 0 96px",
+        margin: "48px 0 48px",
         borderRadius: '0',
         border: '2px solid',
         '&:hover': {
